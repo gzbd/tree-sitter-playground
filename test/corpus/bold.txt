@@ -1,0 +1,43 @@
+==============
+Bold
+==============
+*bold text*
+
+---
+(document
+    (paragraph
+        (text
+            (bold))))
+
+==============
+Bold with astrix inside
+==============
+**bold text*
+
+---
+(document
+    (paragraph
+        (text
+            (bold))))
+
+==============
+Bold with two astrixs inside
+==============
+**bold text**
+
+---
+(document
+    (paragraph
+        (text
+            (bold))))
+
+==============
+Itallic
+==============
+/bold text/
+
+---
+(document
+    (paragraph
+        (text
+            (itallic))))

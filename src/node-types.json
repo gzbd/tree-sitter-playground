@@ -1,0 +1,311 @@
+[
+  {
+    "type": "document",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "sections",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "line_levelone",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "list_item_dash",
+          "named": true
+        },
+        {
+          "type": "list_item_numbered",
+          "named": true
+        },
+        {
+          "type": "list_item_star",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "line_leveltwo",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "list_item_dash",
+          "named": true
+        },
+        {
+          "type": "list_item_numbered",
+          "named": true
+        },
+        {
+          "type": "list_item_star",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "line_levelzero",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "list_item_dash",
+          "named": true
+        },
+        {
+          "type": "list_item_numbered",
+          "named": true
+        },
+        {
+          "type": "list_item_star",
+          "named": true
+        },
+        {
+          "type": "text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "paragraph_levelone",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "line_levelone",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "paragraph_leveltwo",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "line_leveltwo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "paragraph_levelzero",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "line_levelzero",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "section_levelone",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "paragraph_levelone",
+          "named": true
+        },
+        {
+          "type": "section_leveltwo",
+          "named": true
+        },
+        {
+          "type": "title_levelone",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "section_leveltwo",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "paragraph_leveltwo",
+          "named": true
+        },
+        {
+          "type": "title_leveltwo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "section_levelzero",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "paragraph_levelzero",
+          "named": true
+        },
+        {
+          "type": "section_levelone",
+          "named": true
+        },
+        {
+          "type": "title_levelzero",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "sections",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "section_levelzero",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "text",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bold_text",
+          "named": true
+        },
+        {
+          "type": "characters",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "title_levelone",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "text_title",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "title_leveltwo",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "text_title",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "title_levelzero",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "text_title",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "bold_text",
+    "named": true
+  },
+  {
+    "type": "characters",
+    "named": true
+  },
+  {
+    "type": "list_item_dash",
+    "named": true
+  },
+  {
+    "type": "list_item_numbered",
+    "named": true
+  },
+  {
+    "type": "list_item_star",
+    "named": true
+  },
+  {
+    "type": "text_title",
+    "named": true
+  }
+]
