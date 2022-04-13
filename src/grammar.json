@@ -31,6 +31,10 @@
               {
                 "type": "SYMBOL",
                 "name": "paragraph_levelzero"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "code_block_levelzero"
               }
             ]
           }
@@ -85,6 +89,67 @@
           }
         ]
       }
+    },
+    "code_block_levelzero": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "code_begin"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_new_line"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "code_line_levelzero"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_new_line"
+              }
+            ]
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "code_end"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_new_line"
+          }
+        }
+      ]
+    },
+    "code_begin": {
+      "type": "PATTERN",
+      "value": "=CODE_BEGIN [a-zA-Z0-9]*"
+    },
+    "code_end": {
+      "type": "PATTERN",
+      "value": "=CODE_END"
+    },
+    "code_line_levelzero": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "characters"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_new_line"
+        }
+      ]
     },
     "paragraph_levelzero": {
       "type": "SEQ",

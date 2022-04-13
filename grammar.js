@@ -63,7 +63,7 @@ module.exports = grammar({
     sections: $ => repeat1($.section_levelzero),
     section_levelzero: $ => seq(
       $.title_levelzero,
-      repeat(choice($.section_levelone, $.paragraph_levelzero))
+      repeat(choice($.section_levelone, $.paragraph_levelzero, $.code_block_levelzero))
     ),
     section_levelone: $ => prec.right(seq(
       $.title_levelone,
@@ -73,6 +73,15 @@ module.exports = grammar({
       $.title_leveltwo,
       repeat($.paragraph_leveltwo))
     ),
+
+    code_block_levelzero: $ => seq(
+      $.code_begin, $._new_line,
+      repeat(seq($.code_line_levelzero, $._new_line)),
+      $.code_end, repeat($._new_line)
+    ),
+    code_begin: $ => /=CODE_BEGIN [a-zA-Z0-9]*/,
+    code_end: $ => /=CODE_END/,
+    code_line_levelzero: $ => seq($.characters, $._new_line),
 
 
     paragraph_levelzero: $ => seq(repeat1($.line_levelzero), repeat1($._new_line)),
@@ -85,7 +94,6 @@ module.exports = grammar({
       seq($.list_item_star, $._new_line),
       seq($.text, $._new_line),
     ),
-
 
 
     paragraph_levelone: $ => seq(repeat1($.line_levelone), repeat1($._new_line)),
@@ -109,7 +117,6 @@ module.exports = grammar({
       seq($._indent_leveltwo, $.list_item_star, $._new_line),
       seq($._indent_leveltwo, $.text, $._new_line),
     ),
-
 
 
     list_item_numbered: $ => /\d+\. .+/,
