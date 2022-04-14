@@ -67,21 +67,42 @@ module.exports = grammar({
     ),
     section_levelone: $ => prec.right(seq(
       $.title_levelone,
-      repeat(choice($.section_leveltwo, $.paragraph_levelone)))
+      repeat(choice($.section_leveltwo, $.paragraph_levelone, $.code_block_levelone)))
     ),
     section_leveltwo: $ => prec.right(seq(
       $.title_leveltwo,
-      repeat($.paragraph_leveltwo))
+      repeat(choice($.paragraph_leveltwo, $.code_block_leveltwo)))
     ),
 
     code_block_levelzero: $ => seq(
-      $.code_begin, $._new_line,
+      $.code_begin_levelzero, $._new_line,
       repeat(seq($.code_line_levelzero, $._new_line)),
-      $.code_end, repeat($._new_line)
+      $.code_end_levelzero, repeat($._new_line)
     ),
+    code_begin_levelzero: $ => $.code_begin,
+    code_end_levelzero: $ => $.code_end,
+    code_line_levelzero: $ => seq($.characters, $._new_line),
+
+    code_block_levelone: $ => seq(
+      $.code_begin_levelone, $._new_line,
+      repeat(seq($.code_line_levelone, $._new_line)),
+      $.code_end_levelone, repeat($._new_line)
+    ),
+    code_begin_levelone: $ => seq($._indent_levelone, $.code_begin),
+    code_end_levelone: $ => seq($._indent_levelone, $.code_end),
+    code_line_levelone: $ => seq($._indent_levelone, $.characters, $._new_line),
+
+    code_block_leveltwo: $ => seq(
+      $.code_begin_leveltwo, $._new_line,
+      repeat(seq($.code_line_leveltwo, $._new_line)),
+      $.code_end_leveltwo, repeat($._new_line)
+    ),
+    code_begin_leveltwo: $ => seq($._indent_leveltwo, $.code_begin),
+    code_end_leveltwo: $ => seq($._indent_leveltwo, $.code_end),
+    code_line_leveltwo: $ => seq($._indent_leveltwo, $.characters, $._new_line),
+
     code_begin: $ => /=CODE_BEGIN [a-zA-Z0-9]*/,
     code_end: $ => /=CODE_END/,
-    code_line_levelzero: $ => seq($.characters, $._new_line),
 
 
     paragraph_levelzero: $ => seq(repeat1($.line_levelzero), repeat1($._new_line)),
