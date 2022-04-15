@@ -1,0 +1,9 @@
+(section_levelzero) @fold
+(section_levelone) @fold
+(section_leveltwo) @fold
+(paragraph_levelzero) @fold
+(paragraph_levelone) @fold
+(paragraph_leveltwo) @fold
+(code_block_levelzero) @fold
+(code_block_levelone) @fold
+(code_block_leveltwo) @fold
